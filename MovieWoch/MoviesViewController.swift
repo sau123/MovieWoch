@@ -44,6 +44,26 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     var endpoint : String!
     
     func networkRequest(){
+        
+        
+        if Reachability.isConnectedToNetwork() == false {
+            print("not connected")
+            networkErrorView.hidden = false
+            tableView.hidden = true
+            
+            networkErrorDescription.sizeToFit()
+            
+            let alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+            //            var alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
+            //            showViewController(alert, sender: networkErrorDescription )
+            
+            return
+        }else{
+            tableView.hidden = false
+            networkErrorView.hidden = true
+        }
+        
 //        hud.mode = MBProgressHUDModeAnnularDeterminate;
         
         SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.Dark)
@@ -84,24 +104,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if Reachability.isConnectedToNetwork() == false {
-            print("not connected")
-            networkErrorView.hidden = false
-            tableView.hidden = true
-            
-            networkErrorDescription.sizeToFit()
-
-            let alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
-//            var alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
-//            showViewController(alert, sender: networkErrorDescription )
-
-            return
-        }else{
-            tableView.hidden = false
-            networkErrorView.hidden = true
-        }
         
         tableView.dataSource = self
         tableView.delegate = self
