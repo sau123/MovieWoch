@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34A045161D3AF1680095402A /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A045151D3AF1680095402A /* DetailedViewController.swift */; };
+		34A045181D3C72250095402A /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A045171D3C72250095402A /* GridViewCell.swift */; };
 		34B4D2891D37321000D3849D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4D2881D37321000D3849D /* AppDelegate.swift */; };
 		34B4D28E1D37321000D3849D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34B4D28C1D37321000D3849D /* Main.storyboard */; };
 		34B4D2901D37321000D3849D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B4D28F1D37321000D3849D /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		34A045151D3AF1680095402A /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		34A045171D3C72250095402A /* GridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
 		34B4D2851D37321000D3849D /* MovieWoch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieWoch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B4D2881D37321000D3849D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34B4D28D1D37321000D3849D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				34B4D29E1D383F5300D3849D /* MovieCell.swift */,
+				34A045171D3C72250095402A /* GridViewCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34B4D2891D37321000D3849D /* AppDelegate.swift in Sources */,
+				34A045181D3C72250095402A /* GridViewCell.swift in Sources */,
 				34B4D29B1D37328B00D3849D /* MoviesViewController.swift in Sources */,
 				34A045161D3AF1680095402A /* DetailedViewController.swift in Sources */,
 				34B4D29F1D383F5300D3849D /* MovieCell.swift in Sources */,

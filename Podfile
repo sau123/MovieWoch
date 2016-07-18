@@ -7,6 +7,7 @@ target 'MovieWoch' do
 
   # Pods for MovieWoch
     pod 'AFNetworking', '~> 3.0'
+    pod 'UIImage-Resize', '~> 1.0'
     pod 'UIAlertView-Blocks'
     pod 'SVProgressHUD'
     pod 'MBProgressHUD'

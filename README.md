@@ -16,7 +16,7 @@ The following **required** functionality is complete:
 * [x] User can view movie details by tapping on a cell.
 * [x] User sees loading state while waiting for movies API. You can use one of the 3rd party libraries listed on CocoaControls.
 * [x] User sees an error message when there's a networking error. You may not use UIAlertController or a 3rd party library to display the error. See this screenshot for what the error message should look like.
-* [x] User can pull to refresh the movie list.
+* [x] User can pull to refresh the movie list. To show if the refresh functionality works, on pull to refresh, the top rated movies are displayed.
 
 The following **optional** features are implemented:
 * [ ] Add a tab bar for Now Playing or Top Rated movies. (high)

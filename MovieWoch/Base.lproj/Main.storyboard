@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="135" sectionHeaderHeight="28" sectionFooterHeight="28" id="7IM-ud-oTL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="103" width="320" height="464"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -50,7 +50,7 @@
                                             <outlet property="movieImage" destination="hL1-G4-0Ie" id="aNi-9y-2At"/>
                                             <outlet property="movieSummaryLabel" destination="QHu-np-EP5" id="viS-0Z-FW8"/>
                                             <outlet property="movieTitleLabel" destination="sGb-6S-DfM" id="PNs-1C-8yx"/>
-                                            <segue destination="aXb-fe-822" kind="push" id="oUu-TB-dKt"/>
+                                            <segue destination="aXb-fe-822" kind="push" identifier="listViewSegue" id="oUu-TB-dKt"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -67,7 +67,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please connect to a stable internet connection and restart the application" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1VM-kr-ZCd">
-                                        <rect key="frame" x="8" y="36" width="304" height="21"/>
+                                        <rect key="frame" x="8" y="36" width="304" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,14 +76,72 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Yt7-dw-PPk">
+                                <rect key="frame" x="0.0" y="103" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mkf-F8-DmO">
+                                    <size key="itemSize" width="145" height="182"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridViewCell" id="e1K-mz-pI2" customClass="GridViewCell" customModule="MovieWoch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="182"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="182"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fPS-qs-zrK">
+                                                    <rect key="frame" x="21" y="13" width="107" height="108"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zMu-Vr-UYM">
+                                                    <rect key="frame" x="8" y="129" width="129" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="gridMovieImage" destination="fPS-qs-zrK" id="1tT-8m-psF"/>
+                                            <outlet property="gridMovieTitle" destination="zMu-Vr-UYM" id="ewR-Mx-5WN"/>
+                                            <segue destination="aXb-fe-822" kind="push" identifier="gridViewSegue" id="0LZ-J4-keA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <searchBar contentMode="redraw" id="l7K-9P-6ki">
+                                <rect key="frame" x="0.0" y="60" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="X2M-B4-TBU">
+                                <rect key="frame" x="0.0" y="490" width="320" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="LV"/>
+                                    <segment title="GV"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onSegmentControlTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="DtA-9o-Dxd"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="PU9-BO-hw3"/>
                     <connections>
+                        <outlet property="collectionView" destination="Yt7-dw-PPk" id="mXb-Z7-RJf"/>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="W3l-Zg-kiU"/>
                         <outlet property="networkErrorDescription" destination="1VM-kr-ZCd" id="0df-Ay-aZd"/>
                         <outlet property="networkErrorView" destination="rAz-i9-iEo" id="a3A-PR-L1F"/>
                         <outlet property="networkLabel" destination="eWw-PI-dlJ" id="ebl-wc-fYW"/>
+                        <outlet property="searchBar" destination="l7K-9P-6ki" id="ncM-hU-gts"/>
                         <outlet property="tableView" destination="7IM-ud-oTL" id="Gey-30-9nB"/>
                     </connections>
                 </viewController>
@@ -91,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="694" y="378"/>
         </scene>
-        <!--Detailed View Controller-->
+        <!--Movie View-->
         <scene sceneID="JrN-u2-Ckf">
             <objects>
                 <viewController id="aXb-fe-822" customClass="DetailedViewController" customModule="MovieWoch" customModuleProvider="target" sceneMemberID="viewController">
@@ -100,15 +158,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="r6F-tU-tbu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="502"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bO5-3R-15A">
-                                        <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="502"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleAspectFill" id="zmi-67-Ngk">
-                                        <rect key="frame" x="0.0" y="568" width="320" height="333"/>
+                                        <rect key="frame" x="0.0" y="502" width="320" height="333"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Efr-N2-yd8">
@@ -133,7 +191,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1165510008" green="1" blue="0.92236093119999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Cug-g7-aDR"/>
+                    <navigationItem key="navigationItem" title="Movie View" id="Cug-g7-aDR"/>
                     <connections>
                         <outlet property="detailedImageView" destination="bO5-3R-15A" id="kQ7-SA-4Y1"/>
                         <outlet property="infoView" destination="zmi-67-Ngk" id="DYV-ka-Jnd"/>
@@ -149,11 +207,16 @@
         <!--Navigation Controller-->
         <scene sceneID="EPt-0S-F21">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ika-BZ-WmN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MoviesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ika-BZ-WmN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BLo-fh-ztb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -165,4 +228,7 @@
             <point key="canvasLocation" x="162" y="378"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oUu-TB-dKt"/>
+    </inferredMetricsTieBreakers>
 </document>

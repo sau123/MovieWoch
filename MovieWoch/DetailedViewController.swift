@@ -15,6 +15,7 @@ class DetailedViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var infoView: UIView!
     
+    
     var movie: NSDictionary!
 
     override func viewDidLoad() {
@@ -32,7 +33,6 @@ class DetailedViewController: UIViewController {
         movieSummary.sizeToFit()
         
         detailedImageView.setImageWithURL(NSURL(string: "https://image.tmdb.org/t/p/w342/\(moviePath)")!)
-        
         
     }
 
