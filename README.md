@@ -5,7 +5,7 @@
 
 Submitted by: **Saumeel**
 
-Time spent: **10** hours spent in total
+Time spent: **15** hours spent in total
 
 ## User Stories
 
@@ -19,13 +19,13 @@ The following **required** functionality is complete:
 * [x] User can pull to refresh the movie list. To show if the refresh functionality works, on pull to refresh, the top rated movies are displayed.
 
 The following **optional** features are implemented:
-* [ ] Add a tab bar for Now Playing or Top Rated movies. (high)
-* [ ] Implement a UISegmentedControl to switch between a list view and a grid view. (high)
-* [ ] Add a search bar. (med)
-* [ ] All images fade in as they are loading. (low)
-* [ ] For the large poster, load the low-res image first and switch to high-res when complete. (low)
-* [ ] Customize the highlight and selection effect of the cell. (low)
-* [ ] Customize the navigation bar. (low)
+* [x] Add a tab bar for Now Playing or Top Rated movies. (high)
+* [x] Implement a UISegmentedControl to switch between a list view and a grid view. (high)
+* [x] Add a search bar. (med)
+* [x] All images fade in as they are loading. (low)
+* [x] For the large poster, load the low-res image first and switch to high-res when complete. (low)
+* [x] Customize the highlight and selection effect of the cell. (low)
+* [x] Customize the navigation bar. (low)
 
 The following **additional** features are implemented:
 
