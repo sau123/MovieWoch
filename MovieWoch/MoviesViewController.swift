@@ -272,6 +272,14 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 print("smallimageresponse : \(smallImageResponse)")
                 print("small Image : \(smallImage)")
                 
+                
+                // logic 
+                /*
+                    if small image is in cache, large image will also be in cache
+                    if small image in not in cache, large image will also not be in cache.
+                 
+                    always displaying the large image, just that first time, it gets displayed with animation, second time it just gets displayed.
+                */
                 if smallImageResponse != nil {
                     cell.movieImage.alpha = 0.0
                     cell.movieImage.image = smallImage;
@@ -292,7 +300,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                                     
                                         cell.movieImage.image = largeImage;
                                 
-                                    
                                 },
                                 failure: { (request, response, error) -> Void in
                                     // do something for the failure condition of the large image request
@@ -300,10 +307,23 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                             })
                     })
                 }else{
-                    print ("small image was cached?")
-                    cell.movieImage.image = smallImage
-                }
+                    print ("small image was cached!")
+                    cell.movieImage.setImageWithURLRequest(
+                        largeImageRequest,
+                        placeholderImage: smallImage,
+                        success: { (largeImageRequest, largeImageResponse, largeImage) -> Void in
+                            print("large image in cache, mostly !!!")
+                            cell.movieImage.image = largeImage;
+                            
+                        },
+                        failure: { (request, response, error) -> Void in
+                            // do something for the failure condition of the large image request
+                            // possibly setting the ImageView's image to a default image
+                    })
                 
+
+                }
+        
             },
             failure: { (request, response, error) -> Void in
                 // do something for the failure condition
