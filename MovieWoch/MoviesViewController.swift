@@ -198,8 +198,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         refreshControl.beginRefreshing()
         networkRequest()
-        
-//        tableView.insertSubview(refreshControl, atIndex: 0)
+        tableView.insertSubview(refreshControl, atIndex: 0)
         refreshControl.endRefreshing()
         
         

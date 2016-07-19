@@ -24,6 +24,7 @@ class DetailedViewController: UIViewController {
         //setting scrollview's width and height.
         scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: infoView.frame.origin.y + infoView.frame.size.height)
         
+        
         let title = movie["title"] as! String
         let summary = movie["overview"] as! String
         let moviePath = movie["poster_path"] as! String
