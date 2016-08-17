@@ -133,10 +133,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             
             networkErrorDescription.sizeToFit()
             
-            let alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
-            //            var alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
-            //            showViewController(alert, sender: networkErrorDescription )
+//            let alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+//            alert.show()
+            let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: UIAlertControllerStyle.Alert)
+            presentViewController(alert, animated: true, completion: nil)
             return
         }else{
             tableView.hidden = false
@@ -283,7 +283,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                     cell.movieImage.alpha = 0.0
                     cell.movieImage.image = smallImage;
                 
-                    UIView.animateWithDuration(1, animations: { () -> Void in
+                    UIView.animateWithDuration(0.3, animations: { () -> Void in
                     
                         cell.movieImage.alpha = 1.0
                     

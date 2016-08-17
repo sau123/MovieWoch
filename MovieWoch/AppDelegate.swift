@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import UIImage_Resize
+//import UIImage_Resize
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
